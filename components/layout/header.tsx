@@ -35,8 +35,8 @@ export function Header({ onGetStarted }: HeaderProps) {
         <header
             className={cn(
                 "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                isScrolled
-                    ? "bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-md"
+                isScrolled || isMobileMenuOpen
+                    ? "bg-background/95 backdrop-blur-md shadow-md border-b border-border"
                     : "bg-transparent"
             )}
         >
@@ -48,7 +48,7 @@ export function Header({ onGetStarted }: HeaderProps) {
                             <Shield className="w-6 h-6 text-white" />
                         </div>
                         <span className="text-xl font-serif font-bold text-foreground hidden sm:block">
-                            Future Covered
+                            Try Family Life
                         </span>
                     </Link>
 
@@ -79,7 +79,7 @@ export function Header({ onGetStarted }: HeaderProps) {
                         {/* Mobile Menu Button */}
                         <button
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+                            className="lg:hidden p-2 rounded-lg hover:bg-muted transition-colors text-foreground"
                             aria-label="Toggle menu"
                         >
                             {isMobileMenuOpen ? (

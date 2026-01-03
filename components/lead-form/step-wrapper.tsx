@@ -38,11 +38,11 @@ interface StepQuestionProps {
 export function StepQuestion({ question, subtext }: StepQuestionProps) {
     return (
         <div className="mb-8 text-center">
-            <h3 className="text-xl sm:text-2xl font-serif font-bold text-foreground mb-2">
+            <h3 className="text-2xl sm:text-3xl font-serif font-bold text-foreground mb-4">
                 {question}
             </h3>
             {subtext && (
-                <p className="text-sm text-muted-foreground">{subtext}</p>
+                <p className="text-base text-muted-foreground">{subtext}</p>
             )}
         </div>
     );

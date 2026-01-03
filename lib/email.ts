@@ -5,8 +5,8 @@ import type { LeadFormData } from "@/lib/validations";
 const resend = new Resend(process.env.RESEND_API_KEY || "re_123");
 
 export async function sendLeadNotification(data: LeadFormData) {
-    const fromEmail = "Future Covered <leads@resend.dev>";
-    const toEmail = process.env.LEAD_NOTIFICATION_EMAIL || "delivered@resend.dev";
+    const fromEmail = "Try Family Life <leads@resend.dev>";
+    const toEmail = process.env.LEAD_NOTIFICATION_EMAIL || "brosephwarren@gmail.com";
 
     try {
         const { data: result, error } = await resend.emails.send({

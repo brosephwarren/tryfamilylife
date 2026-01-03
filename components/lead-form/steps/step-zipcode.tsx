@@ -49,14 +49,14 @@ export function StepZipcode() {
                         <MapPin className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
                         <Input
                             id="zipcode"
-                            type="text"
+                            type="tel"
                             inputMode="numeric"
                             placeholder="Enter 5-digit zip"
                             value={formData.zip_code || ""}
                             onChange={handleChange}
                             onKeyDown={handleKeyDown}
                             error={!!error}
-                            className="pl-12 text-center text-lg"
+                            className="pl-12 text-center text-2xl tracking-[0.2em] h-14"
                             maxLength={5}
                         />
                     </div>

@@ -55,7 +55,7 @@ export function StepName() {
                             onChange={handleChange}
                             onKeyDown={handleKeyDown}
                             error={!!error}
-                            className="pl-12 text-lg"
+                            className="pl-12 text-xl h-14"
                             autoComplete="given-name"
                         />
                     </div>

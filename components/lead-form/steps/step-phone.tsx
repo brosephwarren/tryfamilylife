@@ -69,7 +69,7 @@ export function StepPhone() {
                             onChange={handleChange}
                             onKeyDown={handleKeyDown}
                             error={!!error}
-                            className="pl-12 text-center text-lg"
+                            className="pl-12 text-center text-2xl tracking-wide h-14"
                         />
                     </div>
                     {error && (

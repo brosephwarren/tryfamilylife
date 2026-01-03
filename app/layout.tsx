@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 */
 
 export const metadata: Metadata = {
-  title: "Future Covered | Life Insurance That Protects Your Future Today",
+  title: "Try Family Life | Life Insurance That Protects Your Future Today",
   description:
     "Get affordable life insurance and mortgage protection from A-rated carriers. Protect your family's future with coverage starting at just dollars a day.",
   keywords: [
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     "affordable life insurance",
   ],
   openGraph: {
-    title: "Future Covered | Life Insurance That Protects Your Future Today",
+    title: "Try Family Life | Life Insurance That Protects Your Future Today",
     description:
       "Get affordable life insurance and mortgage protection from A-rated carriers. Protect your family's future with coverage starting at just dollars a day.",
     type: "website",
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Future Covered - Life Insurance Protection",
+        alt: "Try Family Life - Life Insurance Protection",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Future Covered | Life Insurance Protection",
+    title: "Try Family Life | Life Insurance Protection",
     description:
       "Get affordable life insurance from A-rated carriers. Protect your family's future today.",
   },

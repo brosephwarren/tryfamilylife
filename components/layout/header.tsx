@@ -44,15 +44,15 @@ export function Header({ onGetStarted }: HeaderProps) {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16 lg:h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 group">
+                    <Link href="/" className="flex items-center gap-3 group">
                         <Image
                             src="/logo-icon.png"
                             alt="Try Family Life"
-                            width={40}
-                            height={40}
+                            width={48}
+                            height={48}
                             className="rounded-xl shadow-lg group-hover:shadow-xl transition-shadow"
                         />
-                        <span className="text-xl font-serif font-bold text-foreground hidden sm:block">
+                        <span className="text-2xl font-serif font-bold text-foreground hidden sm:block">
                             Try Family Life
                         </span>
                     </Link>

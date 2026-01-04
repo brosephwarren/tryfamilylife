@@ -50,11 +50,11 @@ export function Footer() {
                         </p>
                         <div className="space-y-3">
                             <a
-                                href="tel:1-800-555-0123"
+                                href="tel:7272779522"
                                 className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
                             >
                                 <Phone className="w-4 h-4" />
-                                <span className="text-sm">1-800-555-0123</span>
+                                <span className="text-sm">(727) 277-9522</span>
                             </a>
                             <a
                                 href="mailto:support@tryfamilylife.com"

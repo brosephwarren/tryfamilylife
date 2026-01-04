@@ -48,8 +48,8 @@ export function Header({ onGetStarted }: HeaderProps) {
                         <Image
                             src="/logo-icon.png"
                             alt="Try Family Life"
-                            width={48}
-                            height={48}
+                            width={56}
+                            height={56}
                             className="rounded-xl shadow-lg group-hover:shadow-xl transition-shadow"
                         />
                         <span className="text-2xl font-serif font-bold text-foreground hidden sm:block">

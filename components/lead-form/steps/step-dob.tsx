@@ -77,7 +77,6 @@ export function StepDob() {
         const result = dateOfBirthSchema.safeParse(iso);
         if (!result.success) {
             setError(result.error.issues[0].message);
-            updateField("date_of_birth", undefined as any); // Clear invalid data
             return;
         }
 

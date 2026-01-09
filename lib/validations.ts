@@ -43,6 +43,50 @@ export const mortgagePaymentSchema = z.enum([
     message: "Please select a monthly payment",
 });
 
+// Life Insurance specific schemas
+export const beneficiaryTypeSchema = z.enum([
+    "husband_wife",
+    "children",
+    "parent_sibling",
+    "business_partner",
+    "other",
+], {
+    message: "Please select a beneficiary",
+});
+
+export const householdIncomeSchema = z.enum([
+    "under_4000",
+    "4000_6999",
+    "7000_9999",
+    "10000_plus",
+], {
+    message: "Please select your household income",
+});
+
+export const protectionLevelSchema = z.enum([
+    "under_100000",
+    "100001_250000",
+    "250001_500000",
+    "500001_1000000",
+    "more_than_1000000",
+], {
+    message: "Please select a protection level",
+});
+
+export const socialSecuritySchema = z.enum(["yes", "no"], {
+    message: "Please select an option",
+});
+
+export const employmentStatusSchema = z.enum([
+    "employed_full_time",
+    "employed_part_time",
+    "self_employed",
+    "retired",
+    "not_employed",
+], {
+    message: "Please select your employment status",
+});
+
 export const dateOfBirthSchema = z.string()
     .min(1, "Date of birth is required")
     .refine((date) => {
@@ -92,8 +136,13 @@ export const leadFormSchema = z.object({
     // Form fields
     has_insurance: hasInsuranceSchema,
     gender: genderSchema,
-    coverage_amount: coverageAmountSchema,
-    mortgage_payment: mortgagePaymentSchema.optional(), // New field
+    coverage_amount: coverageAmountSchema.optional(), // Mortgage protection only
+    mortgage_payment: mortgagePaymentSchema.optional(), // Mortgage protection only
+    beneficiary_type: beneficiaryTypeSchema.optional(), // Life insurance only
+    household_income: householdIncomeSchema.optional(), // Life insurance only
+    protection_level: protectionLevelSchema.optional(), // Life insurance only
+    social_security: socialSecuritySchema.optional(), // Life insurance only
+    employment_status: employmentStatusSchema.optional(),
     date_of_birth: dateOfBirthSchema,
     tobacco_use: tobaccoUseSchema,
     zip_code: zipCodeSchema,
@@ -115,6 +164,11 @@ export type HasInsurance = z.infer<typeof hasInsuranceSchema>;
 export type Gender = z.infer<typeof genderSchema>;
 export type CoverageAmount = z.infer<typeof coverageAmountSchema>;
 export type MortgagePayment = z.infer<typeof mortgagePaymentSchema>;
+export type BeneficiaryType = z.infer<typeof beneficiaryTypeSchema>;
+export type HouseholdIncome = z.infer<typeof householdIncomeSchema>;
+export type ProtectionLevel = z.infer<typeof protectionLevelSchema>;
+export type SocialSecurity = z.infer<typeof socialSecuritySchema>;
+export type EmploymentStatus = z.infer<typeof employmentStatusSchema>;
 export type TobaccoUse = z.infer<typeof tobaccoUseSchema>;
 export type LeadSource = z.infer<typeof leadSourceSchema>;
 
@@ -135,3 +189,39 @@ export const mortgagePaymentLabels: Record<MortgagePayment, string> = {
     "3500_4999": "$3,500 - $4,999 / month",
     "5000_plus": "$5,000+ / month",
 };
+
+// Beneficiary type labels
+export const beneficiaryTypeLabels: Record<BeneficiaryType, string> = {
+    husband_wife: "Husband or Wife",
+    children: "Child / Children",
+    parent_sibling: "Parent / Sibling",
+    business_partner: "Business Partner",
+    other: "Other",
+};
+
+// Household income labels
+export const householdIncomeLabels: Record<HouseholdIncome, string> = {
+    under_4000: "Under $4,000 / month",
+    "4000_6999": "$4,000 - $6,999 / month",
+    "7000_9999": "$7,000 - $9,999 / month",
+    "10000_plus": "$10,000+ / month",
+};
+
+// Protection level labels
+export const protectionLevelLabels: Record<ProtectionLevel, string> = {
+    under_100000: "Under $100,000",
+    "100001_250000": "$100,001 - $250,000",
+    "250001_500000": "$250,001 - $500,000",
+    "500001_1000000": "$500,001 - $1,000,000",
+    "more_than_1000000": "More Than $1,000,000",
+};
+
+// Employment status labels
+export const employmentStatusLabels: Record<EmploymentStatus, string> = {
+    employed_full_time: "Employed Full-Time",
+    employed_part_time: "Employed Part-Time",
+    self_employed: "Self-Employed",
+    retired: "Retired",
+    not_employed: "Not Currently Employed",
+};
+

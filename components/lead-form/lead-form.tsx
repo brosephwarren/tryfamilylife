@@ -7,6 +7,10 @@ import { StepInsurance } from "./steps/step-insurance";
 import { StepGender } from "./steps/step-gender";
 import { StepCoverage } from "./steps/step-coverage";
 import { StepMortgagePayment } from "./steps/step-mortgage-payment";
+import { StepBeneficiary } from "./steps/step-beneficiary";
+import { StepEmployment } from "./steps/step-employment";
+import { StepIncome } from "./steps/step-income";
+import { StepProtectionLevel } from "./steps/step-protection-level";
 import { StepDob } from "./steps/step-dob";
 import { StepTobacco } from "./steps/step-tobacco";
 import { StepZipcode } from "./steps/step-zipcode";
@@ -21,38 +25,45 @@ interface LeadFormProps {
     onClose?: () => void;
 }
 
+// Component mapping for dynamic rendering
+const stepComponents: Record<string, React.ComponentType> = {
+    StepInsurance,
+    StepGender,
+    StepCoverage,
+    StepMortgagePayment,
+    StepBeneficiary,
+    StepEmployment,
+    StepIncome,
+    StepProtectionLevel,
+    StepDob,
+    StepTobacco,
+    StepZipcode,
+    StepPhone,
+    StepName,
+    StepEmail,
+};
+
 export function LeadForm({ onClose }: LeadFormProps) {
-    const { currentStep, prevStep, isComplete } = useFormContext();
+    const { currentStep, prevStep, isComplete, steps } = useFormContext();
 
     const renderStep = () => {
         if (isComplete) {
             return <StepConfirmation onClose={onClose} />;
         }
 
-        switch (currentStep) {
-            case 1:
-                return <StepInsurance />;
-            case 2:
-                return <StepGender />;
-            case 3:
-                return <StepCoverage />;
-            case 4:
-                return <StepMortgagePayment />;
-            case 5:
-                return <StepDob />;
-            case 6:
-                return <StepTobacco />;
-            case 7:
-                return <StepZipcode />;
-            case 8:
-                return <StepPhone />;
-            case 9:
-                return <StepName />;
-            case 10:
-                return <StepEmail />;
-            default:
-                return <StepInsurance />;
+        // Get the current step configuration
+        const currentStepConfig = steps[currentStep - 1];
+        if (!currentStepConfig) {
+            return <StepInsurance />;
         }
+
+        // Get the component for this step
+        const StepComponent = stepComponents[currentStepConfig.component];
+        if (!StepComponent) {
+            return <StepInsurance />;
+        }
+
+        return <StepComponent />;
     };
 
     return (

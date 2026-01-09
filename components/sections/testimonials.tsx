@@ -51,32 +51,32 @@ export function Testimonials({ onGetStarted }: TestimonialsProps) {
     ];
 
     return (
-        <section id="testimonials" className="py-20 lg:py-28 bg-secondary">
+        <section id="testimonials" className="py-20 lg:py-28 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Stats Bar */}
-                <div className="grid grid-cols-3 gap-8 mb-16 pb-16 border-b border-white/10">
+                <div className="grid grid-cols-3 gap-8 mb-16 pb-16 border-b border-border">
                     {stats.map((stat, index) => (
                         <div key={index} className="text-center">
                             <div className="flex justify-center mb-3">
-                                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
+                                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
                                     <stat.icon className="w-6 h-6 text-primary" />
                                 </div>
                             </div>
-                            <p className="text-2xl sm:text-3xl font-bold text-white mb-1">
+                            <p className="text-2xl sm:text-3xl font-bold text-foreground mb-1">
                                 {stat.value}
                             </p>
-                            <p className="text-sm text-gray-400">{stat.label}</p>
+                            <p className="text-sm text-muted-foreground">{stat.label}</p>
                         </div>
                     ))}
                 </div>
 
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-white mb-6">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">
                         Real Stories from{" "}
                         <span className="text-primary">Real Families</span>
                     </h2>
-                    <p className="text-lg text-gray-400">
+                    <p className="text-lg text-muted-foreground">
                         Thousands of families trust us to protect what matters most. Here&apos;s
                         what they have to say.
                     </p>
@@ -87,7 +87,7 @@ export function Testimonials({ onGetStarted }: TestimonialsProps) {
                     {testimonials.map((testimonial, index) => (
                         <div
                             key={index}
-                            className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10"
+                            className="bg-muted rounded-2xl p-8 border border-border"
                         >
                             {/* Quote Icon */}
                             <Quote className="w-10 h-10 text-primary/50 mb-4" />
@@ -103,17 +103,17 @@ export function Testimonials({ onGetStarted }: TestimonialsProps) {
                             </div>
 
                             {/* Text */}
-                            <p className="text-gray-300 mb-6 leading-relaxed">
+                            <p className="text-muted-foreground mb-6 leading-relaxed">
                                 &ldquo;{testimonial.text}&rdquo;
                             </p>
 
                             {/* Author */}
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="font-semibold text-white">{testimonial.name}</p>
-                                    <p className="text-sm text-gray-400">{testimonial.location}</p>
+                                    <p className="font-semibold text-foreground">{testimonial.name}</p>
+                                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
                                 </div>
-                                <span className="text-xs px-3 py-1 rounded-full bg-primary/20 text-primary font-medium">
+                                <span className="text-xs px-3 py-1 rounded-full bg-primary/10 text-primary font-medium">
                                     {testimonial.coverageType}
                                 </span>
                             </div>
@@ -127,11 +127,10 @@ export function Testimonials({ onGetStarted }: TestimonialsProps) {
                         onClick={onGetStarted}
                         size="xl"
                         variant="default"
-                        className="bg-white text-secondary hover:bg-gray-100"
                     >
                         Check My Eligibility Now
                     </Button>
-                    <p className="mt-4 text-sm text-gray-400">
+                    <p className="mt-4 text-sm text-muted-foreground">
                         Free quote • No obligation • 2 minute application
                     </p>
                 </div>

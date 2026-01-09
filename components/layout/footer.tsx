@@ -26,7 +26,7 @@ export function Footer() {
     ];
 
     return (
-        <footer className="bg-secondary text-white">
+        <footer className="bg-white text-foreground">
             {/* Main Footer */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -40,30 +40,30 @@ export function Footer() {
                                 height={64}
                                 className="rounded-xl"
                             />
-                            <span className="text-2xl font-serif font-bold">
+                            <span className="text-2xl font-serif font-bold text-foreground">
                                 Try Family Life
                             </span>
                         </Link>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-6">
+                        <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                             Protecting families with affordable life insurance from A-rated carriers.
                             Your future, covered.
                         </p>
                         <div className="space-y-3">
                             <a
                                 href="tel:7272779522"
-                                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+                                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 <Phone className="w-4 h-4" />
                                 <span className="text-sm">(727) 277-9522</span>
                             </a>
                             <a
                                 href="mailto:support@tryfamilylife.com"
-                                className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors"
+                                className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
                             >
                                 <Mail className="w-4 h-4" />
                                 <span className="text-sm">support@tryfamilylife.com</span>
                             </a>
-                            <div className="flex items-center gap-3 text-gray-400">
+                            <div className="flex items-center gap-3 text-muted-foreground">
                                 <MapPin className="w-4 h-4" />
                                 <span className="text-sm">Nationwide Coverage</span>
                             </div>
@@ -72,13 +72,13 @@ export function Footer() {
 
                     {/* Coverage Links */}
                     <div>
-                        <h4 className="font-semibold text-lg mb-6">Coverage Options</h4>
+                        <h4 className="font-semibold text-lg mb-6 text-foreground">Coverage Options</h4>
                         <ul className="space-y-3">
                             {coverageLinks.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                                        className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                                     >
                                         {link.label}
                                     </Link>
@@ -89,13 +89,13 @@ export function Footer() {
 
                     {/* Company Links */}
                     <div>
-                        <h4 className="font-semibold text-lg mb-6">Company</h4>
+                        <h4 className="font-semibold text-lg mb-6 text-foreground">Company</h4>
                         <ul className="space-y-3">
                             {companyLinks.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                                        className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                                     >
                                         {link.label}
                                     </Link>
@@ -106,13 +106,13 @@ export function Footer() {
 
                     {/* Legal Links */}
                     <div>
-                        <h4 className="font-semibold text-lg mb-6">Legal</h4>
+                        <h4 className="font-semibold text-lg mb-6 text-foreground">Legal</h4>
                         <ul className="space-y-3">
                             {legalLinks.map((link) => (
                                 <li key={link.label}>
                                     <Link
                                         href={link.href}
-                                        className="text-gray-400 hover:text-white transition-colors text-sm"
+                                        className="text-muted-foreground hover:text-foreground transition-colors text-sm"
                                     >
                                         {link.label}
                                     </Link>
@@ -124,13 +124,13 @@ export function Footer() {
             </div>
 
             {/* Bottom Bar */}
-            <div className="border-t border-gray-700">
+            <div className="border-t border-border">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-                        <p className="text-gray-400 text-sm text-center md:text-left">
+                        <p className="text-muted-foreground text-sm text-center md:text-left">
                             © {currentYear} Try Family Life. All rights reserved.
                         </p>
-                        <p className="text-gray-500 text-xs text-center md:text-right max-w-2xl">
+                        <p className="text-muted-foreground text-xs text-center md:text-right max-w-2xl">
                             Life insurance products are offered through licensed insurance agents.
                             Coverage, rates, and availability may vary by state. This is not a
                             guarantee of coverage or benefits. Please consult with a licensed

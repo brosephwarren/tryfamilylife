@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import type { LeadFormData, FormContextType } from "./types";
-import { TOTAL_STEPS } from "./types";
+import { MORTGAGE_STEPS, LIFE_INSURANCE_STEPS } from "./types";
 import { getUTMParams } from "@/lib/utils";
 import type { LeadSource } from "@/lib/validations";
 
@@ -21,6 +21,10 @@ export function FormProvider({ children, leadSource }: FormProviderProps) {
     const [isSubmitting, setIsSubmitting] = React.useState(false);
     const [isComplete, setIsComplete] = React.useState(false);
     const [error, setError] = React.useState<string | null>(null);
+
+    // Get the appropriate steps based on lead source
+    const steps = leadSource === "mortgage_protection" ? MORTGAGE_STEPS : LIFE_INSURANCE_STEPS;
+    const totalSteps = steps.length;
 
     // Capture UTM params and page URL on mount
     React.useEffect(() => {
@@ -54,10 +58,10 @@ export function FormProvider({ children, leadSource }: FormProviderProps) {
     );
 
     const nextStep = React.useCallback(() => {
-        if (currentStep < TOTAL_STEPS) {
+        if (currentStep < totalSteps) {
             setCurrentStep((prev) => prev + 1);
         }
-    }, [currentStep]);
+    }, [currentStep, totalSteps]);
 
     const prevStep = React.useCallback(() => {
         if (currentStep > 1) {
@@ -66,10 +70,10 @@ export function FormProvider({ children, leadSource }: FormProviderProps) {
     }, [currentStep]);
 
     const goToStep = React.useCallback((step: number) => {
-        if (step >= 1 && step <= TOTAL_STEPS) {
+        if (step >= 1 && step <= totalSteps) {
             setCurrentStep(step);
         }
-    }, []);
+    }, [totalSteps]);
 
     const submitForm = React.useCallback(async () => {
         setIsSubmitting(true);
@@ -112,6 +116,9 @@ export function FormProvider({ children, leadSource }: FormProviderProps) {
     const value: FormContextType = {
         formData,
         currentStep,
+        totalSteps,
+        steps,
+        leadSource,
         isSubmitting,
         isComplete,
         error,

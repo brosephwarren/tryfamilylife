@@ -9,8 +9,14 @@ const options = [
     { value: "no", label: "No" },
 ];
 
+const lifeInsuranceOptions = [
+    { value: "yes", label: "Yes" },
+    { value: "no", label: "No" },
+    { value: "unsure", label: "Unsure" },
+];
+
 export function StepInsurance() {
-    const { formData, updateField, nextStep } = useFormContext();
+    const { formData, updateField, nextStep, leadSource } = useFormContext();
 
     const handleSelect = (value: "yes" | "no" | "unsure") => {
         updateField("has_insurance", value);
@@ -18,13 +24,19 @@ export function StepInsurance() {
         setTimeout(nextStep, 300);
     };
 
+    const isMortgageFlow = leadSource === "mortgage_protection";
+    const currentOptions = isMortgageFlow ? options : lifeInsuranceOptions;
+    const question = isMortgageFlow
+        ? "Do you currently have a mortgage?"
+        : "Do you currently have life insurance?";
+
     return (
         <StepWrapper>
             <StepQuestion
-                question="Do you currently have a mortgage?"
+                question={question}
             />
             <div className="space-y-3">
-                {options.map((option) => (
+                {currentOptions.map((option) => (
                     <SelectionButton
                         key={option.value}
                         value={option.value}

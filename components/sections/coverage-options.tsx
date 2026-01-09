@@ -45,17 +45,17 @@ export function CoverageOptions({ onLifeInsurance, onMortgageProtection }: Cover
                     {/* Life Insurance Card */}
                     <div className="bg-card rounded-3xl shadow-xl overflow-hidden card-hover">
                         {/* Card Header */}
-                        <div className="bg-gradient-to-r from-primary to-primary-hover p-8 text-white">
+                        <div className="bg-card p-8">
                             <div className="flex items-center gap-4 mb-4">
-                                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
-                                    <Heart className="w-7 h-7" />
+                                <div className="w-14 h-14 rounded-2xl bg-primary flex items-center justify-center">
+                                    <Heart className="w-7 h-7 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-serif font-bold">Life Insurance</h3>
-                                    <p className="text-white/80 text-sm">Family Protection</p>
+                                    <h3 className="text-2xl font-serif font-bold text-foreground">Life Insurance</h3>
+                                    <p className="text-muted-foreground text-sm">Family Protection</p>
                                 </div>
                             </div>
-                            <p className="text-white/90">
+                            <p className="text-muted-foreground">
                                 Comprehensive coverage that protects your loved ones and provides
                                 living benefits when you need them most.
                             </p>
@@ -86,17 +86,17 @@ export function CoverageOptions({ onLifeInsurance, onMortgageProtection }: Cover
                     {/* Mortgage Protection Card */}
                     <div className="bg-card rounded-3xl shadow-xl overflow-hidden card-hover">
                         {/* Card Header */}
-                        <div className="bg-gradient-to-r from-secondary to-secondary-light p-8 text-white">
+                        <div className="bg-card p-8">
                             <div className="flex items-center gap-4 mb-4">
-                                <div className="w-14 h-14 rounded-2xl bg-white/20 flex items-center justify-center">
-                                    <Home className="w-7 h-7" />
+                                <div className="w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center">
+                                    <Home className="w-7 h-7 text-white" />
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-serif font-bold">Mortgage Protection</h3>
-                                    <p className="text-white/80 text-sm">Home Security</p>
+                                    <h3 className="text-2xl font-serif font-bold text-foreground">Mortgage Protection</h3>
+                                    <p className="text-muted-foreground text-sm">Home Security</p>
                                 </div>
                             </div>
-                            <p className="text-white/90">
+                            <p className="text-muted-foreground">
                                 Ensure your home stays in your family, no matter what life throws
                                 your way.
                             </p>
